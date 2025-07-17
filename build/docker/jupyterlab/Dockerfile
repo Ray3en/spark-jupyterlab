@@ -51,3 +51,7 @@ EXPOSE 8888
 
 WORKDIR ${SHARED_WORKSPACE}
 CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=
+
+COPY ../../hive/conf/hive-site.xml $SPARK_HOME/conf/hive-site.xml
+
+RUN mkdir -p /tmp/metastore_db /tmp/hive/warehouse && chmod -R 777 /tmp

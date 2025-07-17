@@ -32,3 +32,5 @@ ENV PYSPARK_PYTHON python3
 # -- Runtime
 
 WORKDIR ${SPARK_HOME}
+
+COPY conf/hive-site.xml $SPARK_HOME/conf/
